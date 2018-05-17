@@ -6,8 +6,10 @@ crabdata_pcr
 
 install.packages("dplyr")
 
-library(dplyr)
+install.packages("ggplot2")
 
+library(dplyr)
+library(ggplot2)
 crabdata_pcr
 
 #listing column name
@@ -28,11 +30,11 @@ pcrsum <- crabdata_pcr %>%
 
 
 ggplot(data = pcrsum) + 
-  geom_histogram(aes(x = sq_mean.y)) +
+  geom_histogram(aes(x = sq_mean_d01)) +
   facet_wrap(~infection_status) 
 
 ggplot(data = pcrsum) + 
-  geom_histogram(aes(x = sq_mean.x)) +
+  geom_histogram(aes(x = sq_mean_d26)) +
   facet_wrap(~infection_status) 
 
 
