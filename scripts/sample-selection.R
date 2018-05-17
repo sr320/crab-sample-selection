@@ -4,12 +4,11 @@ crabdata_pcr <- read.csv("https://raw.githubusercontent.com/RobertsLab/project-c
 
 crabdata_pcr
 
-install.packages("dplyr")
+install.packages("tidyverse")
 
-install.packages("ggplot2")
 
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
+
 crabdata_pcr
 
 #listing column name
