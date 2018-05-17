@@ -4,9 +4,9 @@ crabdata_pcr <- read.csv("https://raw.githubusercontent.com/RobertsLab/project-c
 
 crabdata_pcr
 
-install.packages("tidyverse")
+install.packages("dplyr")
 
-library(tidyverse)
+library(dplyr)
 
 crabdata_pcr
 
