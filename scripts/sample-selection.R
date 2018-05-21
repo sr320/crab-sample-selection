@@ -27,6 +27,10 @@ master %>%
   select(FRP, Sample_Day, temperature_treatment.x, infection_status, SQ_Mean, SQ_Std_Dev, Day, Tube) %>% 
   arrange(infection_status,SQ_Mean)
 
+pcrsum2 <- master %>% 
+  select(FRP, infection_status, SQ_Mean, temperature_treatment.x) %>% 
+  arrange(infection_status,SQ_Mean) %>%
+  unique()
 
 pcrsum <- master %>% 
   select(FRP, infection_status, SQ_Mean) %>% 
