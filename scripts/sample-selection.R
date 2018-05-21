@@ -29,7 +29,7 @@ master %>%
 
 pcrsum <- master %>% 
   select(FRP, infection_status, SQ_Mean, temperature_treatment.x, Day) %>% 
-  arrange(FRP,infection_status,SQ_Mean) %>%
+  arrange(FRP,infection_status) %>%
   unique()
 
 
