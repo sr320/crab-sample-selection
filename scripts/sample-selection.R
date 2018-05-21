@@ -1,9 +1,13 @@
 library(dplyr)
 
+
+#call file containing qPCR results from Pam 
 qpcr <- read.csv("https://raw.githubusercontent.com/RobertsLab/project-crab/master/data/20180517-all-runs-qPCR-results.csv")
 
+#call file containing data for crabs that have three samples per crab and have 20 ng/µL or more of isolated RNA in the sample - note that this is note including the two infected warm-treatment crabs because they only had isolated RNA in 2 out of 3 sample dates. 
 RNA <- read.csv("https://raw.githubusercontent.com/RobertsLab/project-crab/master/data/goodsamples.csv")
 
+#join the files and align data based on FRP number (FRP is the unique number given to crab individuals)
 master <- left_join(RNA, qpcr, by = "FRP")
 
 #A more detailed look at experiment with qPCR data included
