@@ -32,7 +32,7 @@ pcrsum <- master %>%
   arrange(FRP,infection_status) %>%
   unique()
 
-
+write.csv(pcrsum, "data/20180522-pcr-table.csv")
 
 #The following may not be possible because I have not rearranged the data to be in separate columns based on sample day. How can I rearrange them in R? 
 
