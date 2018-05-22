@@ -1,5 +1,17 @@
 library(dplyr)
 
+#Make .csv file for "all crabs" hemolymph sampling data
+all_crabs <- read.csv("https://raw.githubusercontent.com/RobertsLab/project-crab/master/data/20180522-master-all-crabs-hemo.csv")
+
+#want to add treatment tank data to file based on the letter in Day 12 Holding Tank (C = cold, A = ambient, W = warm)
+
+
+
+
+
+
+
+
 
 #call file containing qPCR results from Pam 
 qpcr <- read.csv("https://raw.githubusercontent.com/RobertsLab/project-crab/master/data/20180521-qPCR-as-of-050818.csv")
