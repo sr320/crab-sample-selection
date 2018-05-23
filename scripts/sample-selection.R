@@ -3,9 +3,29 @@ library(dplyr)
 #Make .csv file for "all crabs" hemolymph sampling data
 all_crabs <- read.csv("https://raw.githubusercontent.com/RobertsLab/project-crab/master/data/20180522-master-all-crabs-hemo.csv")
 
+#write out all_crabs csv
+write_csv(all_crabs, "analyses/all_crabs")
+
+# look at file
+(head(all_crabs)) 
+
 #want to add treatment tank data to file based on the letter in Day 12 Holding Tank (C = cold, A = ambient, W = warm)
+#or
+#"treatment.tank"
+#1, 2, 3 --> Cold
+#4, 5, 6 --> Warm
+#7, 8, 9 --> Ambient
 
 
+#create new object where create a new column named SR_col in all_crabs object, where if treatment.tank 1 or 2 or 3 - then value = COLD
+#if treatment.tank 4 or 5 or 6 then value = WARM, otherwise value = AMBIENT, then piped to filter for row where sample_day == 9
+newstart <- mutate(all_crabs, SR_col = ifelse(treatment.tank == 1 | treatment.tank == 2 | treatment.tank == 3, "COLD", ifelse(treatment.tank == 4 | treatment.tank == 5 | treatment.tank == 6, "WARM", "AMBIENT"))) %>%
+  filter(sample_day == 9)
+ 
+#look at file
+head(newstart)
+
+---
 
 
 
